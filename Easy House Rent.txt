@@ -1,0 +1,9 @@
+Título del Proyecto: Easy House Rent
+Ficha: ADSI - 2251848
+
+Aprendices:
+  - Sebastian Henao Ruiz - Frontend
+  - Juan Pablo Patiño Florez - Backend
+  - Jhon Maicol Montoya Florez - Frontend - Backend
+  - Julian David Amaya Gomez - Documentación
+  - Karen Dahiana Agudelo Villa - Documentación
