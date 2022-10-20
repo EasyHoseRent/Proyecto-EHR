@@ -1,12 +1,13 @@
-CREATE SCHEMA IF NOT EXISTS `ehr`;
+CREATE SCHEMA IF NOT EXISTS ehr;
+USE ehr;
 
 
-CREATE TABLE IF NOT EXISTS `ehr`.`departamento` (
+CREATE TABLE IF NOT EXISTS departamento (
   `iddepartamento` INT NOT NULL,
   `nombre` VARCHAR(80) NOT NULL,
   PRIMARY KEY (`iddepartamento`));
 
-CREATE TABLE IF NOT EXISTS `ehr`.`municipios` (
+CREATE TABLE IF NOT EXISTS municipios (
   `idmunicipio` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(120) NOT NULL,
   `departamento` INT NOT NULL,
@@ -14,11 +15,11 @@ CREATE TABLE IF NOT EXISTS `ehr`.`municipios` (
   INDEX `municipio_departamento` (`departamento` ASC),
   CONSTRAINT `municipio_departamento`
     FOREIGN KEY (`departamento`)
-    REFERENCES `ehr`.`departamento` (`iddepartamento`));
+    REFERENCES `departamento` (`iddepartamento`));
 
 
 
-CREATE TABLE IF NOT EXISTS `ehr`.`usuarios` (
+CREATE TABLE IF NOT EXISTS usuarios (
   `idusuario` INT NOT NULL AUTO_INCREMENT,
   `nombre` CHAR(80) NOT NULL,
   `apellidos` CHAR(80) NOT NULL,
@@ -36,13 +37,13 @@ CREATE TABLE IF NOT EXISTS `ehr`.`usuarios` (
   INDEX `usuarios_departamento_idx` (`departamento` ASC),
   CONSTRAINT `usuarios_departamento`
     FOREIGN KEY (`departamento`)
-    REFERENCES `ehr`.`departamento` (`iddepartamento`),
+    REFERENCES `departamento` (`iddepartamento`),
   CONSTRAINT `usuarios_municipio`
     FOREIGN KEY (`municipio`)
-    REFERENCES `ehr`.`municipios` (`idmunicipio`))
+    REFERENCES `municipios` (`idmunicipio`))
 ;
 
-CREATE TABLE IF NOT EXISTS `ehr`.`anuncios` (
+CREATE TABLE IF NOT EXISTS anuncios (
   `idanuncio` INT NOT NULL AUTO_INCREMENT,
   `idusuario` INT NOT NULL,
   `titulo` CHAR(80) NOT NULL,
@@ -67,10 +68,10 @@ CREATE TABLE IF NOT EXISTS `ehr`.`anuncios` (
   INDEX `usuarios_idx` (`idusuario` ASC),
   CONSTRAINT `anuncio - usuarios`
     FOREIGN KEY (`idusuario`)
-    REFERENCES `ehr`.`usuarios` (`idusuario`))
+    REFERENCES `usuarios` (`idusuario`))
 ;
 
-CREATE TABLE IF NOT EXISTS `ehr`.`oferta` (
+CREATE TABLE IF NOT EXISTS `oferta` (
   `idoferta` INT NOT NULL,
   `idanuncio` INT NOT NULL,
   `idusuario` INT NOT NULL,
@@ -79,8 +80,8 @@ CREATE TABLE IF NOT EXISTS `ehr`.`oferta` (
   INDEX `usuarios_idx` (`idusuario` ASC),
   CONSTRAINT `anuncios`
     FOREIGN KEY (`idanuncio`)
-    REFERENCES `ehr`.`anuncios` (`idanuncio`),
+    REFERENCES `anuncios` (`idanuncio`),
   CONSTRAINT `usuarios`
     FOREIGN KEY (`idusuario`)
-    REFERENCES `ehr`.`usuarios` (`idusuario`))
+    REFERENCES `usuarios` (`idusuario`))
 ;

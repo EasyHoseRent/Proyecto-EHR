@@ -14,7 +14,7 @@ export const UserAnouncementCard = ({ data , allData }) => {
     const { user } = useContext(UserContext)
 
     const deleteUserAnouncement = () => {
-        axios.delete('https://easy-house-rent.azurewebsites.net/api/Advertisement/DeleteAd',
+        axios.delete('https://localhost:44375/api/Advertisement/DeleteAd',
             { params: { idanuncio: idanuncio } })
             .then(res => {
                 console.log(res);

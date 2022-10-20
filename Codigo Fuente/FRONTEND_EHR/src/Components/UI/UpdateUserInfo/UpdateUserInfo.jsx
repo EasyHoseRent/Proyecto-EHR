@@ -72,7 +72,7 @@ export const UpdateUserInfo = () => {
   }
 
   const sendDataUpdate = () => {
-    axios.put('https://easy-house-rent.azurewebsites.net/api/Users', {
+    axios.put('https://localhost:44375/api/Users', {
       idusuario: user[0].idusuario,
       nombre: name,
       apellidos: lastName,

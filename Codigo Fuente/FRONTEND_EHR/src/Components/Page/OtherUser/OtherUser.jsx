@@ -28,7 +28,7 @@ export const OtherUser = () => {
   const [userPhone, setUserPhone] = useState('')
 
   const getUserInfo = () => {
-    axios.get('https://easy-house-rent.azurewebsites.net/api/Users/getUser', { params: { idusuario: idUser } })
+    axios.get('https://localhost:44375/api/Users/getUser', { params: { idusuario: idUser } })
       .then(response => {
         setUserData(response.data)
         setUserPhone(response.data[0].telefono)
@@ -38,7 +38,7 @@ export const OtherUser = () => {
   const [userAnouncement, setUserAnouncement] = useState([])
 
   const getAdversitement = () => {
-    axios.get('https://easy-house-rent.azurewebsites.net/api/Advertisement/AdUser', { params: { idusuario: idUser } })
+    axios.get('https://localhost:44375/api/Advertisement/AdUser', { params: { idusuario: idUser } })
       .then(response => {
         setUserAnouncement(response.data)
       })

@@ -76,7 +76,7 @@ export const AnouncementInfo = ({ data, userData }) => {
 
 
     const getEmailToSend = () => {
-        axios.get('https://easy-house-rent.azurewebsites.net/api/Users/GetUser', { params: { idusuario: idUser } })
+        axios.get('https://localhost:44375/api/Users/GetUser', { params: { idusuario: idUser } })
             .then(response => {
                 if (response.data.length !== 0) {
                     setEmail(response.data[0].email)

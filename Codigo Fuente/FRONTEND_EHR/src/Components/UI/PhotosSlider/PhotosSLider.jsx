@@ -8,7 +8,7 @@ export const PhotosSLider = () => {
     const [images, setImages] = useState([])
 
     const getImagesRecent = () => {
-        axios.get('https://easy-house-rent.azurewebsites.net/api/Structure/AboutUs')
+        axios.get('https://localhost:44375/api/Structure/AboutUs')
             .then(response => {
                 setImages(response.data)
             })

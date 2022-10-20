@@ -9,7 +9,7 @@ import { Footer } from '../../Layout/Footer/Footer'
 export const SeeAds = () => {
 
     const [seeCard, setSeeCard] = useState([])
-    const URLSEEAD = `https://easy-house-rent.azurewebsites.net/api/Advertisement`
+    const URLSEEAD = `https://localhost:44375/api/Advertisement`
 
     const GetDataAd = () => {
         axios.get(URLSEEAD)

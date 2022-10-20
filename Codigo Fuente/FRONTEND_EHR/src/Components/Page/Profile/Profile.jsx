@@ -8,7 +8,7 @@ import { ProfileImage } from '../../UI/ProfileImage/ProfileImage';
 import axios from 'axios';
 import Carousel from 'react-elastic-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightFromBracket, faArrowRightToBracket, faArrowUpFromBracket, faHouseCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faHouseCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import { UpdateUserInfo } from '../../UI/UpdateUserInfo/UpdateUserInfo';
 import { UserAnouncementCard } from '../../UI/UserAnouncementCard/UserAnouncementCard';
 import { Modal, Overlay, ProfileCardButton } from '../../StyledComponents/Overlay/StyledComponents';
@@ -22,7 +22,7 @@ export const Profile = () => {
     const [userAnouncement, setUserAnouncement] = useState([])
 
     const getAdversitement = () => {
-        axios.get('https://easy-house-rent.azurewebsites.net/api/Advertisement/AdUser', { params: { idusuario: user[0].idusuario } })
+        axios.get('https://localhost:44375/api/Advertisement/AdUser', { params: { idusuario: user[0].idusuario } })
             .then(response => {
                 setUserAnouncement(response.data)
             })
@@ -30,8 +30,6 @@ export const Profile = () => {
                 console.log(err);
             })
     }
-
-
 
     const breakproint = [
 
@@ -42,13 +40,10 @@ export const Profile = () => {
         {
             width: 415,
             itemsToShow: 2
-
-
         },
         {
             width: 880,
             itemsToShow: 3
-
         },
         {
             width: 1280,
@@ -106,7 +101,7 @@ export const Profile = () => {
     }
 
     const changePassword = () => {
-        axios.put('https://easy-house-rent.azurewebsites.net/api/Password/confirmpassword',  { 
+        axios.put('https://localhost:44375/api/Password/confirmpassword',  { 
             email: user[0].email, 
             password: newPassword,
             validatePassword:oldPassword

@@ -50,10 +50,10 @@ export const StarRating = () => {
 
   const updatePassword = (e) => { 
     e.preventDefault();
-    axios.post(`https://easy-house-rent.azurewebsites.net/api/Password/getpassword`, bodyParametersPassword)
+    axios.post(`https://localhost:44375/api/Password/getpassword`, bodyParametersPassword)
     .then(res => {
       if(response == true){
-        axios.put(`https://easy-house-rent.azurewebsites.net/api/Password`, bodyParameters, {headers:{ Authorization: `Bearer ${emailToken}` }})
+        axios.put(`https://localhost:44375/api/api/Password`, bodyParameters, {headers:{ Authorization: `Bearer ${emailToken}` }})
         .then(response => {
           console.log(response);
         }).catch(ex => {

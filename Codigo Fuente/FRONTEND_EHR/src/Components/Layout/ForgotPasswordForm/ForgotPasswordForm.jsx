@@ -8,7 +8,7 @@ import { Alert } from '../../Alert';
 
 export const ForgotPasswordForm = () => {
 
-    const EMAILURL = 'https://easy-house-rent.azurewebsites.net/api/password'
+    const EMAILURL = 'https://localhost:44375/api/password'
 
     const [email, setemail] = useState({ email: "email" })
 

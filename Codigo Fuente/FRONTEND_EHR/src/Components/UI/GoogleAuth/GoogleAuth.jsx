@@ -37,7 +37,7 @@ export const GoogleAuth = ({ buttonText }) => {
     const navigate = useNavigate()
 
     const registerGoogleUser  = () =>{
-        axios.post(`https://easy-house-rent.azurewebsites.net/verifyEmail?email=${email}`)
+        axios.post(`https://localhost:44375/verifyEmail?email=${email}`)
             .then(response => {
                 if (response.data === true) {
                     axios.post(urlLogin, {
@@ -84,7 +84,7 @@ export const GoogleAuth = ({ buttonText }) => {
 
     return (
         < GoogleLogin
-            clientId="502993702484-vkdcg537aa1ip1r14mab9s11dt7lf2i2.apps.googleusercontent.com"
+            clientId="88301304031-k1etnj95sq8mnli4jsanu311cnoenma4.apps.googleusercontent.com"
             buttonText={ buttonText }
             onSuccess={responseGoogle}
             onFailure={responseGoogle}

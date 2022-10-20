@@ -16,7 +16,7 @@ export const Chat = () => {
 
     const navigate = useNavigate()
 
-    const { loading, messages, error } = UseChat()
+    const { messages } = UseChat()
 
     useEffect(() => {
         if (user === null) {

@@ -7,7 +7,6 @@ import { faArrowRightFromBracket, faEnvelope, faHeadset, faPhone } from '@fortaw
 import { Alert } from '../../Alert'
 import { Overlay } from '../../StyledComponents/Overlay/StyledComponents';
 import { useEffect } from 'react';
-import { useSyncExternalStore } from 'react';
 
 export const ContactUs = ({ value }) => {
 
@@ -101,7 +100,7 @@ export const ContactUs = ({ value }) => {
                   </div>
                   <div className="text-container-contact">
                     <FontAwesomeIcon icon={faPhone} className='tools-render-action' />
-                    <p className='text-contact'> +57 317 458 3592</p>
+                    <p className='text-contact'> +57 313 706 6248</p>
                   </div>
                   <div className="text-container-contact">
                     <FontAwesomeIcon icon={faTwitter} className='tools-render-action' />
